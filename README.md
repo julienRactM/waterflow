@@ -1,7 +1,7 @@
 # Projet La plateforme - apartment-hunter
 
-Projet sur le Deep Learning & MLFlow réalisé par :  
-  
+Projet sur le Deep Learning & MLFlow réalisé par :
+
 ```Ruta Tamosiunaite```
 
 ```Aurélien Papillon```
@@ -11,6 +11,7 @@ Projet sur le Deep Learning & MLFlow réalisé par :
 ## Notes importantes à l'appréciation du projets :
 
 - Lien du Trello : https://trello.com/b/wJFkiK3o/waterflow-highline-team
+- Pour lancer mlflow : mlflow server --host 127.0.0.1 --port 5000
 
 ### Présentation :
 
@@ -18,8 +19,8 @@ Projet sur le Deep Learning & MLFlow réalisé par :
 
 ## Explication du projet
 
-Développement d'un outil visant à estimer la qualité de l'eau. 
-  
+Développement d'un outil visant à estimer la qualité de l'eau.
+
 The original dataset contains the records of water acceptability reflected by metrics like chemically derived contaminants:
 - `ph` - evaluates the acid–base balance of water. WHO recommendation limit of pH: from 6.5 to 8.5
 - `Hardness`
@@ -27,13 +28,13 @@ The original dataset contains the records of water acceptability reflected by me
 - `Chloramines`
 - `Sulfate`
 - `Conductivity` - or in other words - total dissolved solids, WHO reccommended to be less than 600 mg/l, but no health-based guideline value has been proposed https://iris.who.int/bitstream/handle/10665/352532/9789240045064-eng.pdf?sequence=1&isAllowed=y#page=29
-- `Organic_carbon` 
+- `Organic_carbon`
 - `Trihalomethanes`
 - `Turbidity`
 
 The resulting feature defining drinking water acceptability is:
-- `Potability` Boolean variable  
-0 for **not** potable water and  
+- `Potability` Boolean variable
+0 for **not** potable water and
 1 for potable water
 
 ## Data exploration:
