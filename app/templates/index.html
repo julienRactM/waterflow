@@ -1,51 +1,77 @@
 {% extends "base.html" %}
 {% block content %}
-
-      <h2>Project context</h2>
-      <article>
-        <p>
-          Predicting houses prices in Kansas City.
-        </p>
-      </article>
-      <h2>Prédiction</h2>
-        <form action="/" method="post">
-
-          <label for="sqft_living">Square Footage:</label><br>
-          <input type="range" id="sqft_living" name="sqft_living" min="300" max="5000" value="2000", onchange=updateSqft_livingValue(this.value)><br>
-          <span id="sqft_livingValue">2000</span><br>
-
-          <label for="sqft_living15">Neighborhood Square Footage:</label><br>
-          <input type="range" id="sqft_living15" name="sqft_living15" min="300" max="5000" value="2000" ,
-            onchange=updateSqft_living15Value(this.value)><br>
-          <span id="sqft_living15Value">2000</span><br>
-
-          <label for="grade"> What is the home's grade ?:</label><br>
-          <select id="grade" name="grade">
-            <option value=5>5</option>
-            <option value=6>6</option>
-            <option value=7>7</option>
-            <option value=8>8</option>
-            <option value=9>9</option>
-            <option value=10>10</option>
-            <option value=11>11</option>
-          </select><br>
-
-          <label for="zipcode_class">What is the home's zipcode class ?:</label><br>
-          <select id="zipcode_class" name="zipcode_class">
-            <option value=0>0</option>
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-            <option value=4>4</option>
-          </select><br>
+        <form action="/" method="post" class="prediction-form">
+          <!-- Ph -->
+          <div class="form-group">
+            <label for="ph">Ph :</label><br>
+            <input type="range" id="ph" name="ph" min="0" max="14" value="7" onchange="updatePhValue(this.value)">
+            <span id="phValue">7</span>
+          </div>
+          <!-- Hardness -->
+          <div class="form-group">
+            <label for="Hardness">Hardness :</label><br>
+            <input type="range" id="Hardness" name="Hardness" min="0" max="100" value="50"
+              onchange="updateHardnessValue(this.value)">
+            <span id="HardnessValue">50</span>
+          </div>
+          <!-- Solids -->
+          <div class="form-group">
+            <label for="Solids">Solids :</label><br>
+            <input type="range" id="Solids" name="Solids" min="0" max="1000" value="500"
+              onchange="updateSolidsValue(this.value)">
+            <span id="SolidsValue">500</span>
+          </div>
+          <!-- Chloramines -->
+          <div class="form-group">
+            <label for="Chloramines">Chloramines :</label><br>
+            <input type="range" id="Chloramines" name="Chloramines" min="0" max="10" value="5"
+              onchange="updateChloraminesValue(this.value)">
+            <span id="ChloraminesValue">5</span>
+          </div>
+          <!-- Sulfate -->
+          <div class="form-group">
+            <label for="Sulfate">Sulfate :</label><br>
+            <input type="range" id="Sulfate" name="Sulfate" min="0" max="500" value="250"
+              onchange="updateSulfateValue(this.value)">
+            <span id="SulfateValue">250</span>
+          </div>
+          <!-- Conductivity -->
+          <div class="form-group">
+            <label for="Conductivity">Conductivity :</label><br>
+            <input type="range" id="Conductivity" name="Conductivity" min="0" max="100" value="50"
+              onchange="updateConductivityValue(this.value)">
+            <span id="ConductivityValue">50</span>
+          </div>
+          <!-- Organic Carbon -->
+          <div class="form-group">
+            <label for="Organic_carbon">Organic Carbon :</label><br>
+            <input type="range" id="Organic_carbon" name="Organic_carbon" min="0" max="50" value="25"
+              onchange="updateOrganicCarbonValue(this.value)">
+            <span id="Organic_carbonValue">25</span>
+          </div>
+          <!-- Trihalomethanes -->
+          <div class="form-group">
+            <label for="Trihalomethanes">Trihalomethanes :</label><br>
+            <input type="range" id="Trihalomethanes" name="Trihalomethanes" min="0" max="200" value="100"
+              onchange="updateTrihalomethanesValue(this.value)">
+            <span id="TrihalomethanesValue">100</span>
+          </div>
+          <!-- Turbidity -->
+          <div class="form-group">
+            <label for="Turbidity">Turbidity :</label><br>
+            <input type="range" id="Turbidity" name="Turbidity" min="0" max="10" value="5"
+              onchange="updateTurbidityValue(this.value)">
+            <span id="TurbidityValue">5</span>
+          </div>
 
           <button type="submit" class="styled-button">Résultats !</button>
         </form>
 
+
           {% if comment %}
           <article>
               <p>{{ comment }}</p>
-              <p>Disclaimer : Our Estimations are on average 96 000 off</p>
+              <p>Disclaimer : Nos estimations sont fiables à seulement 60%, buvez de petites gorgées</p>
               <!-- ajouter predict proba ici -->
           </article>
           {% endif %}

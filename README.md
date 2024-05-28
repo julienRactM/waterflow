@@ -12,6 +12,9 @@ Projet sur le Deep Learning & MLFlow réalisé par :
 
 - Lien du Trello : https://trello.com/b/wJFkiK3o/waterflow-highline-team
 - Pour lancer mlflow : mlflow server --host 127.0.0.1 --port 5000
+- Instructions our appeller l'api :
+python script.py ph(float range[0-14]) Hardness(float range[0-100])  Solids(float range[0-1000]) Chloramines(float range[0-10]) Sulfate(float range[0-500]) Conductivity(float range[0-100]) Organic_carbon(float range[0-50]) Trihalomethanes(float range[0-200]) Turbidity(float range[0-10])
+ex : python script.py 7.5 50 500 5 250 50 25 100 5
 
 ### Présentation :
 
@@ -39,13 +42,16 @@ The resulting feature defining drinking water acceptability is:
 
 ## Data exploration:
 
+Le Dataset est en réalité inexploitable, étant généré artificiellement.
+
 ### Feature analysis
+
+Les Features n'impactent réellement que très peu le caractère potable de l'eau
 
 ## Veille technique
 
-$\min_{\theta} \left( ||Y - X\theta||^2 + \lambda||\theta|| \right)$
 
-### Evaluating the model's performance:
+
 
 
 ## Feature Selection
@@ -55,20 +61,8 @@ $\min_{\theta} \left( ||Y - X\theta||^2 + \lambda||\theta|| \right)$
 
 ## Deep Learning
 
-### With a Single feature
-
-| **Model** | Baseline| Linear | Decision Tree R | Ridge |
-|-----------------|-----------------|-----------------|-----------------|-----------------|
-| **RMSE**  | 161756 | 102003 | 163420 | ```159645``` |
-| **R2** | X | ````0.37```` | 0.4067 | 0.3691  |
-
-
-### With multiple features and Grid Search
-
-| **Model** | Baseline| Linear | Decision Tree R | Ridge | ElasticNet | SVR | KNN Regressor | XGBoost |
-|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-| **RMSE**  | 161756 | 160665.2 | 156118 | 105344 | 102667 | 107301 | ```96308``` | 96361 |
-| **R2** | X | 0.7512 | 0.3586 | 0.7320 | 0.7465 | 0.7108 | ```0.7636``` | 0.7571 |
+### Evaluating the model's performance:
+Peak à 68% d'accuracy
 
 
 ##  Conclusion

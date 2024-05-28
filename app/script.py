@@ -1,9 +1,11 @@
 import sys
 import pandas as pd
 import mlflow
+import warnings
 
 def model_prediction(ph, Hardness, Solids, Chloramines, Sulfate, Conductivity, Organic_carbon, Trihalomethanes, Turbidity):
 
+    warnings.filterwarnings("ignore")
     mlflow.set_tracking_uri(uri="http://127.0.0.1:5000")
     loaded_model = mlflow.pyfunc.load_model('mlflow-artifacts:/892102606047290498/96769e9236bb446aa8a9bd8ae214700d/artifacts/waterflow_model')
 
@@ -25,38 +27,36 @@ def model_prediction(ph, Hardness, Solids, Chloramines, Sulfate, Conductivity, O
     predictions = loaded_model.predict(X_test)
     return [predictions]
 
+def error_message():
+    print(""" Needs to enter in command line :
+        python script.py ph(float range[0-14]) Hardness(float range[0-100])  Solids(float range[0-1000]) Chloramines(float range[0-10]) Sulfate(float range[0-500]) Conductivity(float range[0-100]) Organic_carbon(float range[0-50]) Trihalomethanes(float range[0-200]) Turbidity(float range[0-10])""")
+    return
+
+def main():
+
+
+    if len(sys.argv) == 10:
+        ph = float(sys.argv[1])
+        Hardness = float(sys.argv[2])
+        Solids = float(sys.argv[3])
+        Chloramines = float(sys.argv[4])
+        Sulfate = float(sys.argv[5])
+        Conductivity = float(sys.argv[6])
+        Organic_carbon = float(sys.argv[7])
+        Trihalomethanes = float(sys.argv[8])
+        Turbidity = float(sys.argv[9])
+    else :
+        error_message()
+        return
+
+    prediction = model_prediction(ph, Hardness, Solids, Chloramines, Sulfate, Conductivity, Organic_carbon, Trihalomethanes, Turbidity)
+
+    if prediction:
+        print("L'eau est potable." if prediction[0] == 1 else "L'eau est non-potable.")
+        return "L'eau est potable." if prediction[0] == 1 else "L'eau est non-potable."
+    else:
+        return print("Invalid prediction")
+
 
 if __name__ == "__main__":
-    # Example values for testing the function
-    ph = 7.0
-    Hardness = 150.0
-    Solids = 20000.0
-    Chloramines = 7.0
-    Sulfate = 250.0
-    Conductivity = 500.0
-    Organic_carbon = 10.0
-    Trihalomethanes = 80.0
-    Turbidity = 4.0
-
-    # pred non potable
-
-    # ph = 700.0
-    # Hardness = 150.0
-    # Solids = 200000.0
-    # Chloramines = 7.0
-    # Sulfate = 250.0
-    # Conductivity = 500.0
-    # Organic_carbon = 100.0
-    # Trihalomethanes = 80.0
-    # Turbidity = 4.0
-
-    # Call the function with example values
-    result = model_prediction(ph, Hardness, Solids, Chloramines, Sulfate, Conductivity, Organic_carbon, Trihalomethanes, Turbidity)
-    print(result[0])
-    print(result[0])
-    print(result[0])
-    print(result[0])
-    print(result[0])
-    print(result[0])
-    print(result[0])
-    print(result[0])
+    main()

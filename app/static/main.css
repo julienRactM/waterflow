@@ -8,7 +8,7 @@ _  /  / / / /_/ /_  / _  / / /
 
 */
 
-:root {
+/* :root {
 
   --color1: #a1b2c3;
   --color2: #1d2e3f;
@@ -21,10 +21,38 @@ _  /  / / / /_/ /_  / _  / / /
   --color9: #7b8c9d;
   --color10: #fff;
   --color11: #888888;
+  --colorSuccess: #4CAF50;
+
+} */
+
+:root {
+  --color1: #dde1e3;
+  /* Light gray-blue */
+  --color2: #2c3e4f;
+  /* Dark blue */
+  --color3: #f5e6d7;
+  /* Beige */
+  --color4: #c8a458;
+  /* Saddle brown */
+  --color5: #c6d4e5;
+  /* Light blue */
+  --color6: #938b7c;
+  /* Taupe */
+  --color7: #7f8d9c;
+  /* Slate gray */
+  --color8: #4d5e6f;
+  /* Dark slate gray */
+  --color9: #c4cfd5;
+  /* Light slate gray */
+  --color10: #ffffff;
+  /* White */
+  --color11: #888888;
+  /* Gray */
+  --colorSuccess: #c8a458;
+  /* Green */
 
 }
 /* var(--color2) */
-
 
 header {
   text-align: center;
@@ -33,13 +61,13 @@ header {
 body {
   font-family: Georgia, 'Times New Roman', Times, serif, Arial, sans-serif;
   background-color: var(--color1);
-  color: var(--color5);
-  margin: 3vh 4vw;
+  color: var(--color4);
+  margin: 0vh 4vw;
 
 }
 
 main {
-  padding: 20px;
+  padding: 14px;
 }
 
 
@@ -57,10 +85,8 @@ footer {
 }
 
 footer article {
-  margin: 0.6vh 0 0 0;
+  margin: 0.1vh 0 0 0;
 }
-
-
 
 
 /* ________           _____
@@ -71,17 +97,17 @@ _  /   /  __/_>  < / /_ _(__  )
 
 
 h1 {
-  color: var(--color4);
+  color: var(--color9);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  margin-bottom: 15px;
-  font-size: 59px;
+  margin-bottom: 3px;
+  font-size: 35px;
   text-align: center;
   /* border-color:magenta */
 }
 
 h2 {
   color: var(--color2);
-  font-size: 34px;
+  font-size: 28px;
   margin-bottom: 10px;
   text-align: center;
 
@@ -225,6 +251,31 @@ label {
   margin-bottom: 4px;
 }
 
+input[type="range"] {
+  height: 30px;
+  /* Adjust the height as needed */
+}
+
+input[type="range"] {
+  /* Apply the color defined by var(--color8) to the range track */
+  background-color: var(--color8);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  /* Apply the color defined by var(--color8) to the range thumb */
+  background-color: var(--color8);
+}
+
+input[type="range"]::-moz-range-thumb {
+  /* Apply the color defined by var(--color8) to the range thumb */
+  background-color: var(--color8);
+}
+
+input[type="range"]::-ms-thumb {
+  /* Apply the color defined by var(--color8) to the range thumb */
+  background-color: var(--color8);
+}
+
 
 select {
   width: 100%;
@@ -252,6 +303,8 @@ select:focus+.focus {
 }
 
 
+
+
 /* ______________
 __  ____/__  /_____ ___________________________
 _  /    __  /_  __ `/_  ___/_  ___/  _ \_  ___/
@@ -265,6 +318,11 @@ _  /    __  /_  __ `/_  ___/_  ___/  _ \_  ___/
   text-shadow: -1px -1px 0 var(--color4), 1px -1px 0 var(--color4), -1px 1px 0 var(--color4), 1px 1px 0 var(--color4);
 }
 
+.form-group span{
+  color : var(--color2);
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--colorSuccess);
+}
 
 .styled-button {
   display: inline-block;
@@ -286,3 +344,40 @@ _  /    __  /_  __ `/_  ___/_  ___/  _ \_  ___/
   background-color: var(--color2);
   border-color: var(--color4);
 }
+
+.prediction-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Center the input divs */
+  gap: 20px;
+}
+
+.form-group {
+  width: calc(25% - 10px);
+  /* Two elements per line with a gap of 20px */
+  background-color: var(--color9);
+  /* or any other color variable you want */
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px var(--color11);
+}
+
+.styled-button {
+  width: 100%;
+  /* Button takes the whole width */
+  background-color: var(--colorSuccess);
+  border: none;
+  color: var(--color3);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Add additional styling as needed */
