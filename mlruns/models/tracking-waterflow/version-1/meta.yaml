@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1716889051810
+current_stage: None
+description: ''
+last_updated_timestamp: 1716889051810
+name: tracking-waterflow
+run_id: 96769e9236bb446aa8a9bd8ae214700d
+run_link: ''
+source: mlflow-artifacts:/892102606047290498/96769e9236bb446aa8a9bd8ae214700d/artifacts/waterflow_model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/892102606047290498/96769e9236bb446aa8a9bd8ae214700d/artifacts/waterflow_model
+user_id: null
+version: 1

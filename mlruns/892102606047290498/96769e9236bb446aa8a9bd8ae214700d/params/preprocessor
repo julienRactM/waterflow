@@ -1,0 +1,4 @@
+Pipeline(steps=[('imputer',
+                 Pipeline(steps=[('imputer',
+                                  SimpleImputer(strategy='median'))])),
+                ('robust_scaler', RobustScaler())])

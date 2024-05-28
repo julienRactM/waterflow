@@ -1,0 +1,21 @@
+[('preprocessor', Pipeline(steps=[('imputer',
+                 Pipeline(steps=[('imputer',
+                                  SimpleImputer(strategy='median'))])),
+                ('robust_scaler', RobustScaler())])), ('keras_model', KerasClassifier(
+	model=<function create_model at 0x7f0a4711cee0>
+	build_fn=None
+	warm_start=False
+	random_state=None
+	optimizer=rmsprop
+	loss=None
+	metrics=None
+	batch_size=16
+	validation_batch_size=None
+	verbose=0
+	callbacks=[<keras.src.callbacks.EarlyStopping object at 0x7f0a45f50790>]
+	validation_split=0.0
+	shuffle=True
+	run_eagerly=False
+	epochs=10000
+	class_weight=None
+))]

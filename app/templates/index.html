@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+      <h2>Project context</h2>
+      <article>
+        <p>
+          Predicting houses prices in Kansas City.
+        </p>
+      </article>
+      <h2>Prédiction</h2>
+        <form action="/" method="post">
+
+          <label for="sqft_living">Square Footage:</label><br>
+          <input type="range" id="sqft_living" name="sqft_living" min="300" max="5000" value="2000", onchange=updateSqft_livingValue(this.value)><br>
+          <span id="sqft_livingValue">2000</span><br>
+
+          <label for="sqft_living15">Neighborhood Square Footage:</label><br>
+          <input type="range" id="sqft_living15" name="sqft_living15" min="300" max="5000" value="2000" ,
+            onchange=updateSqft_living15Value(this.value)><br>
+          <span id="sqft_living15Value">2000</span><br>
+
+          <label for="grade"> What is the home's grade ?:</label><br>
+          <select id="grade" name="grade">
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+            <option value=10>10</option>
+            <option value=11>11</option>
+          </select><br>
+
+          <label for="zipcode_class">What is the home's zipcode class ?:</label><br>
+          <select id="zipcode_class" name="zipcode_class">
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+          </select><br>
+
+          <button type="submit" class="styled-button">Résultats !</button>
+        </form>
+
+          {% if comment %}
+          <article>
+              <p>{{ comment }}</p>
+              <p>Disclaimer : Our Estimations are on average 96 000 off</p>
+              <!-- ajouter predict proba ici -->
+          </article>
+          {% endif %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Carbone App</title>
+    <link rel="stylesheet" type="text/css" href="../static/main.css">
+  </head>
+
+  <body>
+    <header>
+      <h1 class="outlined-text">Projet Stroke Alert</h1>
+      <!-- <nav class="navbar">
+      </nav> -->
+    </header>
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+
+    <footer>
+     <article>
+      <p>
+        Mangez équilibré
+      </p>
+     </article>
+    </footer>
+
+        <script>
+          function updateSqft_livingValue(newValue) {
+            document.getElementById("sqft_livingValue").innerText = newValue;
+          }
+          function updateSqft_living15Value(newValue) {
+            document.getElementById("sqft_living15Value").innerText = newValue;
+          }
+        </script>
+
+
+  </body>
+
+</html>

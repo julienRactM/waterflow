@@ -1,0 +1,269 @@
+/*
+______  ___      _____
+___   |/  /_____ ___(_)______
+__  /|_/ /_  __ `/_  /__  __ \
+_  /  / / / /_/ /_  / _  / / /
+/_/  /_/  \__,_/ /_/  /_/ /_/
+
+
+*/
+header {
+  text-align: center;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif, Arial, sans-serif;
+  background-color: #a1b2c3;
+  color: #d4e5f6;
+  margin: 3vh 4vw;
+
+}
+
+main {
+  padding: 20px;
+}
+
+
+
+/* Footer Styles */
+footer {
+  background-color: #1d2e3f;
+  /* Footer background color */
+  color: #f5e6d7;
+  /* Text color for the footer */
+  width: 100%;
+  text-align: center;
+  margin: 3vh 0 0 0;
+  bottom: 0px
+}
+
+footer article {
+  margin: 0.6vh 0 0 0;
+}
+
+
+
+
+/* ________           _____
+___  __/________  ___  /________
+__  /  _  _ \_  |/_/  __/_  ___/
+_  /   /  __/_>  < / /_ _(__  )
+/_/    \___//_/|_| \__/ /____/   */
+
+
+h1 {
+  color: peru;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-bottom: 15px;
+  font-size: 59px;
+  text-align: center;
+  /* border-color:magenta */
+}
+
+h2 {
+  color: #1d2e3f;
+  font-size: 34px;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+
+p {
+  color: #f5e6d7;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+
+
+
+/* ________      ______ ______
+___  __/_____ ___  /____  /____
+__  /  _  __ `/_  __ \_  /_  _ \
+_  /   / /_/ /_  /_/ /  / /  __/
+/_/    \__,_/ /_.___//_/  \___/
+                               */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #9a8b7c;
+  padding: 8px;
+}
+
+th {
+  background-color: #1d2e3f;
+  color: #f5e6d7;
+  margin-top: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #6f7e8d;
+}
+
+tr:nth-child(odd) {
+  background-color: #3b4c5d;
+}
+
+caption {
+  padding: 10px 0 15px 0;
+  color: #1d2e3f;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* _____   ___________    __
+___  | / /__    |_ |  / /
+__   |/ /__  /| |_ | / /
+_  /|  / _  ___ |_ |/ /
+/_/ |_/  /_/  |_|____/
+*/
+
+.navbar {
+  overflow: hidden;
+  background-color: #1d2e3f;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f5e6d7;
+  color: peru;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #6f7e8d;
+}
+
+.navbar a.active {
+  background-color: #7b8c9d;
+  color: #1d2e3f;
+  font-weight: bold;
+  text-shadow: -0.2px -0.2px 0 peru, 0.2px -0.2px 0 peru, -0.2px 0.2px 0 peru, 0.2px 0.2px 0 peru;
+}
+
+
+
+
+.nav-link {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #fff;
+
+
+
+}
+
+.nav-link.active {
+  background-color: #7b8c9d;
+  color: white;
+}
+
+
+/* _______       __________      ______
+___    |________  /___(_)________  /____________
+__  /| |_  ___/  __/_  /_  ___/_  /_  _ \_  ___/
+_  ___ |  /   / /_ _  / / /__ _  / /  __/(__  )
+/_/  |_/_/    \__/ /_/  \___/ /_/  \___//____/   */
+
+article {
+  background-color: #3b4c5d;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+
+/* __________
+___  ____/___________________ ___
+__  /_   _  __ \_  ___/_  __ `__ \
+_  __/   / /_/ /  /   _  / / / / /
+/_/      \____//_/    /_/ /_/ /_/  */
+
+
+
+
+/* form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+} */
+
+label {
+  color: #1d2e3f;
+  font-size: 21px;
+  margin-bottom: 4px;
+}
+
+
+select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  margin: 12px;
+}
+
+select:focus+.focus {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 2px solid var(--select-focus);
+  border-radius: inherit;
+}
+
+
+/* ______________
+__  ____/__  /_____ ___________________________
+_  /    __  /_  __ `/_  ___/_  ___/  _ \_  ___/
+/ /___  _  / / /_/ /_(__  )_(__  )/  __/(__  )
+\____/  /_/  \__,_/ /____/ /____/ \___//____/
+*/
+.outlined-text {
+  color: #1d2e3f;
+  /* rgb(95, 59, 193); */
+  /* text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; */
+  text-shadow: -1px -1px 0 peru, 1px -1px 0 peru, -1px 1px 0 peru, 1px 1px 0 peru;
+}
+
+
+.styled-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: 2px solid #1d2e3f;
+  border-radius: 5px;
+  background-color: #1d2e3f;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.styled-button:hover {
+  background-color: #1d2e3f;
+  border-color: peru;
+}

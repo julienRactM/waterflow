@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Contexte du projet</h2>
+<article>
+  <p>
+    Conception d'un outil de prédiction de risque d'AVC chez les adultes de plus de 30 ans dans un but préventif.
+  </p>
+</article>
+<h2>Prédiction</h2>
+<form action="/" method="post">
+
+  <label for="gender">Sexe:</label><br>
+  <select id="gender" name="gender">
+    <option value=1>femme</option>
+    <option value=0>homme</option>
+  </select><br>
+
+  <label for="age">Age:</label><br>
+ <input type="range" id="age" name="age" min="30" max="100" value="30" , {{ age | default(30) }} -->
+    onchange=updateAgeValue(this.value)><br>
+  <span id="ageValue">30</span><br>
+
+
+  <label for="bmi">Imc:</label><br>
+  <input type="range" id="bmi" name="bmi" min="11" max="60" value="" , {{ bmi | default(25) }}
+    onchange=updateBmiValue(this.value)><br>
+  <span id="bmiValue">25</span><br>
+
+  <label for="Residence_type">Type de résidence:</label><br>
+  <select id="Residence_type" name="Residence_type">
+    <option value=1>Urbain</option>
+    <option value=0>Rural</option>
+  </select><br>
+
+  <label for="smoking_status">Êtes vous fumeur ?:</label><br>
+  <select id="smoking_status" name="smoking_status">
+    <option value="Unknown">Ne souhaite pas se prononcer</option>
+    <option value="smokes">Oui</option>
+    <option value="never smoked">Jamais</option>
+    <option value="formerly smoked">Par le passé</option>
+  </select><br>
+
+
+  <!-- <label for="hypertension">Avez-vous de l'hypertension ?:</label><br>
+          <select id="hypertension" name="hypertension">
+            <option value=1>Oui</option>
+            <option value=0>Non</option>
+          </select><br>
+
+
+          <label for="heart_disease">Avez-vous déjà eu des soucis cardiaques ?:</label><br>
+          <select id="heart_disease" name="heart_disease">
+            <option value=1>Oui</option>
+            <option value=0>Non</option>
+          </select><br>
+
+          <label for="ever_married">Avez-vous déjà été marié ?:</label><br>
+          <select id="ever_married" name="ever_married">
+            <option value=1>Oui</option>
+            <option value=0>Non</option>
+          </select><br>
+
+
+          <label for="work_type">Quel type d'emploi occupez-vous ?:</label><br>
+          <select id="work_type" name="work_type">
+            <option value="Private">Secteur privé</option>
+            <option value="Self-employed">Auto-entrepreneur</option>
+            <option value="Govt_job">Secteur public</option>
+          </select><br>
+
+          <label for="avg_glucose_level">Taux de glucose dans le sang:</label><br>
+          <input type="range" id="avg_glucose_level" name="avg_glucose_level" min="60" max="270" \
+          value="{{ avg_glucose_level | default(120) }}" , onchange=updateAvg_glucose_levelValue(this.value)><br>
+          <span id="avg_glucose_levelValue">120</span><br> -->
+
+
+  <!-- <input type="submit" value="Submit", class="styled-button"> -->
+  <button type="submit" class="styled-button">Résultats !</button>
+</form>
+
+<article>
+  <p>{{ comment }} {{ prediction }}</p>
+</article>
+
+{% endblock %}
